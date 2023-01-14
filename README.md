@@ -7,6 +7,7 @@ $ nest new hw-nestjs --strict # npm
 $ cd hw-nestjs
 $ npm install
 $ npm run start:dev # watch mode
+# localhost:3000
 ```
 
 ## git settings
