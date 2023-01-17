@@ -5,4 +5,5 @@ import { Module } from "@nestjs/common";
   controllers: [],
   providers: [],
 })
-export class UserModule {}
+export class AccountModule {
+}

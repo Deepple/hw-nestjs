@@ -3,10 +3,10 @@ import {
   Entity, OneToMany,
   PrimaryGeneratedColumn,
 } from "typeorm";
-import { User } from "./user.entity";
+import { Account } from "./account.entity";
 
-@Entity({ name: "user_status" })
-export class UserStatus {
+@Entity({ name: "account_status" })
+export class AccountStatus {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -16,6 +16,6 @@ export class UserStatus {
   @Column({ type: "text" })
   description: string;
 
-  @OneToMany(() => User, (user) => user.user_status)
-  users: User[];
+  @OneToMany(() => Account, (account) => account.account_status)
+  accounts: Account[];
 }

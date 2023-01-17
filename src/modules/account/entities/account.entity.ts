@@ -6,11 +6,11 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from "typeorm";
-import { UserStatus } from "./user_status.entity";
-import { UserType } from "./user_type.entity";
+import { AccountStatus } from "./account-status.entity";
+import { AccountType } from "./account-type.entity";
 
-@Entity({ name: "user" })
-export class User {
+@Entity({ name: "account" })
+export class Account {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -20,11 +20,11 @@ export class User {
   @Column({ length: 100 })
   password: string;
 
-  @ManyToOne(() => UserStatus, (user_status) => user_status.users)
-  user_status: UserStatus;
+  @ManyToOne(() => AccountStatus, (account_status) => account_status.accounts)
+  account_status: AccountStatus;
 
-  @ManyToOne(() => UserType, (user_type) => user_type.users)
-  user_type: UserType;
+  @ManyToOne(() => AccountType, (account_type) => account_type.accounts)
+  account_type: AccountType;
 
   @CreateDateColumn({ type: "timestamptz" })
   created_at: Date;

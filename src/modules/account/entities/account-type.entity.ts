@@ -3,10 +3,10 @@ import {
   Entity, OneToMany,
   PrimaryGeneratedColumn,
 } from "typeorm";
-import { User } from "./user.entity";
+import { Account } from "./account.entity";
 
-@Entity({ name: "user_type" })
-export class UserType {
+@Entity({ name: "account_type" })
+export class AccountType {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -16,6 +16,6 @@ export class UserType {
   @Column({ type: "text" })
   description: string;
 
-  @OneToMany(() => User, (user) => user.user_type)
-  users: User[];
+  @OneToMany(() => Account, (account) => account.account_type)
+  accounts: Account[];
 }

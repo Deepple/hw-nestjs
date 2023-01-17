@@ -77,3 +77,10 @@ $ npm install
 $ npm run start:dev # watch mode
 # localhost:3000
 ```
+
+### migration (TypeORM)
+
+```shell
+# 마이그레이션 파일 생성 및 DDL 정의
+$ npm run typeorm:create --dir=account --name=account
+```
