@@ -1,6 +1,6 @@
 import { Controller, Get } from "@nestjs/common";
-import { AppService } from "./app.service";
 import { ConfigService } from "@nestjs/config";
+import { AppService } from "./app.service";
 
 @Controller()
 export class AppController {
@@ -9,6 +9,6 @@ export class AppController {
 
   @Get()
   getHello(): string {
-    return this.configService.get<string | any>("DATABASE_NAME");
+    return <string>this.configService.get("database.name");
   }
 }
