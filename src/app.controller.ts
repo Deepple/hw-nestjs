@@ -4,11 +4,10 @@ import { AppService } from "./app.service";
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService, private configService: ConfigService) {
-  }
+    constructor(private readonly appService: AppService, private configService: ConfigService) {}
 
-  @Get()
-  getHello(): string {
-    return <string>this.configService.get("database.name");
-  }
+    @Get()
+    getHello(): string {
+        return <string>this.configService.get("database.name");
+    }
 }
