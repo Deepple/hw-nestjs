@@ -1,20 +1,16 @@
 import { MigrationInterface, QueryRunner } from "typeorm";
 
-export class CreateBrand1674799646511 implements MigrationInterface {
+export class AlterBrandTableAddColumn1674804956327 implements MigrationInterface {
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.query(`
-        CREATE TABLE item_card.brand
-        (
-            id       serial PRIMARY KEY,
-            name     VARCHAR(100) NOT NULL,
-            eng_name VARCHAR(100)
-        );
+        ALTER TABLE item_card.brand
+            ADD COLUMN eng_name VARCHAR(100);
     `);
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.query(`
-        DROP TABLE item_card.brand;
+        ALTER TABLE item_card.brand DROP COLUMN eng_name;
     `);
     }
 }

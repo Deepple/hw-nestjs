@@ -82,6 +82,12 @@ $ npm run start:dev # watch mode
 
 ```shell
 # 마이그레이션 파일 생성
-$ npm run typeorm:create --dir=item_card --name=brand
-# 스키마를 지정하고 테이블을 생성할 땐, PostgreSQL에서 미리 스키마를 생성해야 함!
+$ npm run migration:create --dir=item_card --name=brand
+# 스키마를 지정하고 테이블을 생성할 땐, PostgreSQL에서 미리 스키마를 생성해야 함
+
+# 마이그레이션 적용 (migrations 테이블 로우 생성)
+$ npm run migration:run
+
+# 최근 마이그레이션 down 실행 (migrations 테이블 로우 삭제)
+$ npm run migration:revert
 ```
