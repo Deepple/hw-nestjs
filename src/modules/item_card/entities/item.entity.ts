@@ -1,12 +1,4 @@
-import {
-    Column,
-    CreateDateColumn, DeleteDateColumn,
-    Entity,
-    JoinColumn,
-    ManyToOne,
-    PrimaryGeneratedColumn,
-    UpdateDateColumn,
-} from "typeorm";
+import { Column, CreateDateColumn, DeleteDateColumn, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 import { Brand } from "./brand.entity";
 import { Category } from "../../common/entities/category.entity";
 
