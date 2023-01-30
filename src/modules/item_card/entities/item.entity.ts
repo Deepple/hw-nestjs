@@ -15,18 +15,18 @@ export class Item {
     @JoinColumn({ name: "category_id" })
     category: Category;
 
-    @Column({ name: "display_name", type: "varchar", length: 200 })
+    @Column({ name: "display_name", type: "varchar", length: 200, nullable: false })
     displayName: string;
 
-    @Column({ name: "eng_display_name", type: "varchar", length: 200 })
-    engDisplayName: string;
+    @Column({ name: "eng_display_name", type: "varchar", length: 200, nullable: true })
+    engDisplayName: string | null;
 
-    @CreateDateColumn({ name: "created_at", type: "timestamptz" })
+    @CreateDateColumn({ name: "created_at", type: "timestamptz", nullable: false })
     createdAt: Date;
 
-    @UpdateDateColumn({ name: "updated_at", type: "timestamptz" })
-    updatedAt: Date;
+    @UpdateDateColumn({ name: "updated_at", type: "timestamptz", nullable: true })
+    updatedAt: Date | null;
 
-    @DeleteDateColumn({ name: "deleted_at", type: "timestamptz" })
-    deletedAt: Date;
+    @DeleteDateColumn({ name: "deleted_at", type: "timestamptz", nullable: true })
+    deletedAt: Date | null;
 }

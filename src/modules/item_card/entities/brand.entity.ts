@@ -10,7 +10,7 @@ export class Brand {
     name: string;
 
     @Column({ name: "eng_name", type: "varchar", length: 100, nullable: true })
-    engName: string;
+    engName: string | null;
 
     @OneToMany(() => Item, (item) => item.brand)
     items: Item[];
