@@ -1,5 +1,4 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import { Item } from "../../item_card/entities/item.entity";
 import { Account } from "../../account/entities/account.entity";
 
 @Entity("common.account_status")

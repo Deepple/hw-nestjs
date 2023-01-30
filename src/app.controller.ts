@@ -8,6 +8,6 @@ export class AppController {
 
     @Get()
     getHello(): string {
-        return <string>this.configService.get("database.name");
+        return <string>this.configService.get("database.synchronize");
     }
 }

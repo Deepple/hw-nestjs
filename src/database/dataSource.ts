@@ -2,7 +2,7 @@ import "reflect-metadata";
 import { DataSource, DataSourceOptions } from "typeorm";
 import * as process from "process";
 
-// require("dotenv").config({ path: (process.env.NODE_ENV === "development" || process.env.NODE_ENV === undefined) ? ".env.development" : ".env.production" });
+// require("dotenv").config({ path: process.env.NODE_ENV === "development" || process.env.NODE_ENV === undefined ? ".env.development" : ".env.production" });
 require("dotenv").config({ path: process.env.NODE_ENV === "production" ? ".env.production" : ".env.development" });
 
 export const AppDataSource = new DataSource({

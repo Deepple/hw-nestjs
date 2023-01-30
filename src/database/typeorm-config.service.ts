@@ -14,10 +14,10 @@ export class TypeOrmConfigService implements TypeOrmOptionsFactory {
             username: this.configService.get("database.username"),
             password: this.configService.get("database.password"),
             database: this.configService.get("database.name"),
-            synchronize: this.configService.get("database.synchronize"),
+            synchronize: JSON.parse(<string>this.configService.get("database.synchronize")),
             dropSchema: false,
             keepConnectionAlive: true,
-            logging: this.configService.get("app.nodeEnv") !== "production",
+            logging: this.configService.get("app.node_env") !== "production",
             entities: [__dirname + "/../**/*.entity{.ts,.js}"],
             migrations: [__dirname + "/migrations/**/*{.ts,.js}"],
             cli: {
