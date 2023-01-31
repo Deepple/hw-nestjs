@@ -6,8 +6,8 @@ export class CreateAccount1675048907625 implements MigrationInterface {
             CREATE TABLE account.account
             (
                 id                       SERIAL PRIMARY KEY,
-                account_status_id        INTEGER REFERENCES common.account_status (id),
-                account_type_id          INTEGER REFERENCES common.account_type (id),
+                account_status_id        INTEGER REFERENCES _common.account_status (id),
+                account_type_id          INTEGER REFERENCES _common.account_type (id),
                 email                    VARCHAR(100) NOT NULL,
                 password                 VARCHAR(100) NOT NULL,
                 created_at               timestamptz  NOT NULL DEFAULT NOW(),

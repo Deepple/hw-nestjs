@@ -1,9 +1,13 @@
 import { Column, CreateDateColumn, DeleteDateColumn, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Model } from "./model.entity";
 
 @Entity("item_card.line")
 export class Line {
     @PrimaryGeneratedColumn({ name: "id", type: "int" })
     id: number;
+
+    @OneToMany(() => Model, (model) => model.line)
+    models: Model[];
 
     @Column({ name: "display_name", type: "varchar", length: 200, nullable: false })
     displayName: string;

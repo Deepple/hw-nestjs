@@ -1,6 +1,7 @@
 import { Column, CreateDateColumn, DeleteDateColumn, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 import { Brand } from "./brand.entity";
-import { Category } from "../../common/entities/category.entity";
+import { Category } from "../../_common/entities/category.entity";
+import { Model } from "./model.entity";
 
 @Entity("item_card.item")
 export class Item {
@@ -14,6 +15,9 @@ export class Item {
     @ManyToOne(() => Category, (category) => category.items)
     @JoinColumn({ name: "category_id" })
     category: Category;
+
+    @OneToMany(() => Model, (model) => model.item)
+    models: Model[];
 
     @Column({ name: "display_name", type: "varchar", length: 200, nullable: false })
     displayName: string;
